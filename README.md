@@ -1,134 +1,154 @@
-Copie todo o conteúdo do bloco de código abaixo e cole direto no seu arquivo **LEIA-ME (`README.md`)** no GitHub:
+Não, vamos simplificar — vou juntar tudo numa única versão final, pra você colar **uma vez só** (substituindo o que está no GitHub agora, que ainda tem o conteúdo errado do Explend). Já incluí as 4 fontes reais no lugar do placeholder.
 
-```markdown
-# 🚀 Miniguia de Estudos: Automação com n8n, Agentes de IA e Soluções no-code/low-code
+Repete os mesmos passos de antes: abra o README.md no GitHub → ✏️ Edit → Ctrl+A, Delete → cola isto:
 
-> **Desafio de Projeto DIO** -- *Pensamento Crítico, Curadoria de Fontes e Engenharia de Prompts com Inteligência Artificial e NotebookLM.*
+`````markdown
+# Caderno Temático: Automação No-Code com IA (n8n + Agentes)
 
----
-
-## 📌 1. Contexto e Objetivos
-
-### Contexto
-O avanço da **Inteligência Artificial Generativa e da Agentic AI** transformou a automação de processos empresariais. Micro e pequenas empresas (PMEs) enfrentam gargalos operacionais críticos, acumulando horas diárias em tarefas manuais repetitivas (como digitação de pedidos, atendimento no WhatsApp e faturamento manual em ERPs). 
-
-Este caderno temático foca no uso do **n8n** (orquestrador no-code/low-code), na integração de modelos de linguagem (LLMs como GPT-4o-mini e Gemini 2.5 Flash-Lite) e na criação de **Agentes de IA** no WhatsApp e ERPs para escalar operações com baixo custo e alto ROI.
-
-### Objetivos de Estudo
-1. **Domínio Técnico do Ecossistema n8n**: Compreender a arquitetura base de fluxos (*Triggers*, *Nodes*, *Edit Fields*, *Webhooks*, *HTTP Request*, *Error Workflows*) e o funcionamento do nó *AI Agent* com *Tools*, *Memory* (Postgres/Redis) e *RAG* (*Vector Stores*).
-2. **Resolução de Problemas Reais de Negócio**: Projetar um caso prático completo de **Automação de Faturamento e Pedidos** para uma distribuidora local integrada ao ERP Explend, reduzindo de 3 horas diárias para faturamento por lote automático com impressão física remota (QZ Tray / Script Python local + PrintNode).
-3. **Engenharia de Infraestrutura e Custo**: Explorar o *self-hosting* do n8n via Docker em VPS privada, otimizando o consumo de APIs de IA com *Prompt Caching*, *Batch API* e utilizando o **Google Antigravity** como centro de planejamento de arquitetura.
-4. **Modelagem Comercial de Agência de Automação de IA (AAA)**: Compreender estratégias de prospecção fria (*Outbound* B2B com Apollo, LinkedIn e Nexar Hunter), estrutura de contratos com retenção mensal (*Retainers* e SLA) e precificação baseada em valor gerado.
+Repositório de estudo do desafio de projeto DIO — documentação do processo de construção de um "segundo cérebro" (NotebookLM) para estudo e execução de projetos de **AI Automation** e **AI Agent Builder**, com foco em ferramentas no-code/low-code (principalmente n8n).
 
 ---
 
-## 📚 2. Curadoria de Fontes
+## 1. Contexto e Objetivos
 
-Para alimentar este caderno temático no NotebookLM, foram selecionadas 5 fontes do repositório de conhecimento:
+**Assunto de interesse escolhido:** Automação de processos de negócio com IA, usando ferramentas no-code/low-code (n8n) e construção de agentes de IA (AI Agents), aplicado à criação de um serviço de automação para vender a terceiros (clínicas, imobiliárias, e-commerce e outros pequenos/médios negócios).
 
-| Fonte | Tipo | Descrição / Relevância |
-| :--- | :--- | :--- |
-| **Relatório de Pesquisa Técnica: Ecossistema n8n, Arquiteturas de Agentes e Custos de IA (Setembro de 2026)** | Markdown / Documento Técnico | Mapeamento completo das atualizações do n8n (v2.36+, Gateway Credits, Isenção de cota para Error Workflows, nó sub-componente *MCP Client Tool*, depurações v3.0) e tabela comparativa de custos de APIs de IA. |
-| **AI Agent \| Nodes - n8n Docs** | Documentação Oficial (URL/Markdown) | Especificações do nó raiz *AI Agent*, transição para *Tools Agent*, integração de ferramentas, memórias e chamadas de sub-workflows. |
-| **Businesses FORGOOD: Developing a Framework for Ethical Behavioural Science in Corporations** | PDF Acadêmico (LSE) | Base metodológica para governança, conduta ética de agentes autônomos e tomada de decisão em ambiente corporativo. |
-| **Automação de Processos: como escalar operações sem... - WAAC** | Artigo Técnico (URL) | Framework de eficiência operacional B2B, análise de gargalos em PMEs, padronização de atendimento/vendas e cálculo de ROI em automações. |
-| **Como Iniciar uma Agência de IA em 10 Passos (Com Dicas de Especialistas) - Botpress** | Guia de Mercado (URL) | Modelagem de negócios para Agências de IA (AAA), definição de nichos de alto impacto, arquitetura de entregáveis (projetos customizados vs. templates reutilizáveis) e precificação. |
+**Objetivos de estudo com este material:**
+- Entender a lógica de fluxos visuais no n8n (triggers, nodes, lógica condicional, respostas) o suficiente para montar e explicar um fluxo do zero.
+- Diferenciar e dominar o vocabulário de duas frentes profissionais correlatas: **AI Automation** (automação de processo com IA) e **AI Agent Builder / AI Agents Developer** (construção de agentes com persona, RAG, memória e ferramentas).
+- Estruturar uma base de estudo contínuo (NotebookLM) capaz de acompanhar atualizações do ecossistema (novos nós do n8n, padrões de arquitetura de agentes, casos práticos de mercado) sem depender de conhecimento estático.
+- Avaliar de forma crítica ferramentas e certificações adjacentes ao objetivo (ex: ferramentas de prospecção de clientes, certificações gratuitas) antes de investir tempo ou dinheiro nelas.
 
 ---
 
-## 🛠️ 3. Engenharia de Prompts e "Cicatrizes" (Troubleshooting)
+## 2. Curadoria de Fontes
 
-Documentação das perguntas estratégicas elaboradas, da evolução dos prompts, das respostas obtidas e dos problemas enfrentados durante o desenvolvimento dos estudos.
+Fontes oficiais da documentação técnica do n8n, selecionadas por cobrirem, sem sobreposição, os quatro pilares de construção de agentes de IA no-code estudados neste projeto: o nó orquestrador, a técnica de recuperação de contexto (RAG), a integração com LangChain como um todo, e o uso de sub-workflows como ferramentas de um agente.
 
-### 🎯 Perguntas Estratégicas Elaboradas
-1. *"Como estruturar uma automação de faturamento para uma distribuidora local de bebidas/alimentos em que os vendedores usam app mobile offline e o dono perde 3h por dia faturando notas manualmente às 22h?"*
-2. *"É possível fazer a impressão automática física da Nota Fiscal na empresa no momento em que o pedido é faturado no ERP Explend, sem intervenção humana?"*
-3. *"Qual a forma mais barata de rodar o n8n e os modelos de IA mantendo a operação segura e com custo fixo baixo para o cliente?"*
-4. *"Quais alternativas gratuitas/open-source existem ao PrintNode para automação de impressão remota via webhook?"*
-
-### 🧪 Variações de Prompts Testados e Evolução
-* **Prompt V1 (Genérico)**: *"Como automatizar faturamento de empresa?"*
-  * *Resultado*: A IA respondeu com conceitos teóricos genéricos sobre ERPs e faturamento eletrônico, sem nós específicos ou conectores práticos.
-* **Prompt V2 (Específico de Contexto e Ferramentas)**: *"Preciso de um fluxo de trabalho no n8n que receba pedidos do app do vendedor via Webhook, valide os itens, envie para a API do ERP Explend e dispare a impressão da NF em um servidor local via QZ Tray ou PrintNode. Qual a arquitetura passo a passo?"*
-  * *Resultado*: Resposta ultra-precisa com a sequência exata de nós (*Webhook Trigger* $\rightarrow$ *Edit Fields* $\rightarrow$ *HTTP Request [ERP Explend]* $\rightarrow$ *AI Agent [Validação de Estoque/Crédito]* $\rightarrow$ *HTTP Request [QZ Tray/PrintNode]*).
-
-### ⚡ "Cicatrizes" e Dificuldades Encontradas (Troubleshooting)
-
-| Dificuldade / Problema | Causa Raiz Identificada | Solução Aplicada / Lição Aprendida |
-| :--- | :--- | :--- |
-| **Custo elevado do PrintNode em escala** | O PrintNode cobra por requisição de impressão via nuvem, o que pode encarecer a mensalidade do cliente PME. | Substituição pelo **QZ Tray (open-source)** ou criação de um **script local em Python (com SumatraPDF no Windows ou CUPS no Linux)** escutando um Webhook local, reduzindo o custo mensal de impressão para R\$ 0,00. |
-| **Consumo excessivo de cotas no n8n Cloud em erros de conexão** | Loops de tentativa de envio quando o ERP ou a impressora ficavam offline consumiam a cota mensal de execuções. | Configuração do **Error Workflow** nativo do n8n (que possui **isenção de cota de execução** a partir da v2.38/v2.28), notificando o WhatsApp do suporte sem consumir créditos. |
-| **Confusão entre ambiente de planejamento e ambiente de produção** | Tentar rodar o robô final do cliente dentro do Google Antigravity. | Alinhamento de papel: o **Google Antigravity** atua como centro de planejamento de arquitetura e geração de blueprints em Markdown, enquanto a execução final em produção ocorre no **n8n (Self-Hosted via Docker)**. |
-| **Depreciação de nós na transição para o n8n 3.0** | Uso de nós antigos como *Function*, *AI Transform* e v1 do *AI Agent*. | Migração obrigatória para o nó *Code* (JavaScript) e nó *AI Agent v2+* (Tools Agent), garantindo compatibilidade futura e sem quebras de execução. |
+- [AI Agent (root node)](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent) — documentação do nó central que orquestra um agente de IA dentro do n8n.
+- [Retrieve Relevant Context (RAG)](https://docs.n8n.io/build/integrate-ai/understand-ai-components/retrieve-relevant-context) — como implementar recuperação de contexto (RAG) para dar memória de conhecimento a um agente.
+- [LangChain in n8n](https://docs.n8n.io/build/integrate-ai/langchain-in-n8n) — visão geral de como o n8n integra o framework LangChain para construção de agentes.
+- [Tool Workflow (sub-node)](https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow) — como transformar um sub-workflow em uma ferramenta (tool) que um agente pode chamar.
 
 ---
 
-## 📖 4. Miniguia de Estudo (Entrega Final)
+## 3. Engenharia de Prompts e "Cicatrizes"
 
-### 📌 Resumos Estruturados do Assunto
+### 3.1 Prompt mestre (persona do "segundo cérebro")
 
-#### 1. Arquitetura de Automação de Faturamento em Tempo Real (Caso Prático: ERP Explend)
-* **Gatilho (Trigger)**: Pedido lançado no App Força de Vendas do Explend ERP sincroniza na nuvem ou dispara um *Webhook Trigger* para o n8n.
-* **Processamento e Validação**: O n8n utiliza o nó *Edit Fields* para parametrizar e limpar os dados (cliente, itens, valores) e realiza uma validação com um modelo leve de IA (*GPT-4o-mini* ou *Gemini 2.5 Flash-Lite*) para checar consistência de estoque/crédito.
-* **Faturamento**: O nó *HTTP Request* aciona a API de emissão de NF-e/NFC-e no Explend ERP, gerando o PDF do documento fiscal.
-* **Impressão Física Remota**: O n8n dispara o PDF da Nota Fiscal diretamente para o **QZ Tray** ou script local acoplado à impressora física da empresa, deixando a nota impressa na bandeja para a equipe de logística.
-* **Ganho de ROI**: Redução do tempo de faturamento de **3 horas diárias para menos de 2 minutos** (faturamento por lote com 1 clique ou automático).
+Construído de forma iterativa: primeira versão focada só em vocabulário do n8n, depois mesclada com uma segunda versão que trouxe uma estrutura melhor (separação em duas frentes profissionais: *AI Automation* vs *AI Agent Builder*) e vocabulário que faltava (RAG, persona, memória de curto/longo prazo, tools). Depois estendida com um módulo específico sobre o Google Antigravity como ferramenta de apoio (não substituta do no-code).
 
-#### 2. Infraestrutura de Baixo Custo e Alta Escala
-* **Self-Hosting do n8n**: Implantação da versão *n8n Community Edition* em servidor VPS privado (Hetzner, Hostinger ou DigitalOcean) via **Docker Compose**, reduzindo o custo de plataforma de €20-€60/mês para cerca de R\$ 30 a R\$ 60/mês com execuções ilimitadas.
-* **Otimização de Custos de IA**: Uso de *Prompt Caching* (desconto de até 90% para instruções estáticas repetidas) e seleção de modelos de alto custo-benefício (GPT-4o-mini a \$0,15/1M tokens de entrada).
+```
+INSTRUÇÃO DE CONTEXTO E PAPEL
+Você é meu assistente especialista e mentor técnico em arquitetura de automações,
+integração de sistemas e desenvolvimento no-code/low-code — meu "segundo cérebro"
+de estudos e projetos.
 
----
+Com base nos materiais deste Notebook (aulas, transcrições e tutoriais em português
+e inglês sobre n8n, fluxos, APIs, Webhooks e IA), me ajude a projetar, estruturar e
+resolver problemas práticos dentro de duas frentes:
 
-### 📖 Glossário de Conceitos Aprendidos
+1. AI AUTOMATION (Automação de Processos com IA)
+Desenhar a engrenagem por trás dos negócios: fluxos lógicos integrados no n8n que
+automatizam tarefas repetitivas, conectam sistemas diferentes e otimizam operações
+de ponta a ponta.
+Vocabulário central: Workflow, Node, Trigger (Webhook, Schedule/Cron, Manual),
+HTTP Method, Path, Authentication, modo de resposta do Webhook, Edit Fields (Set),
+IF/Switch, HTTP Request, Credentials, Execution.
 
-* **AAA (AI Automation Agency)**: Agência especializada em prestação de serviços de automação de processos operacionais e integração de Agentes de IA para empresas.
-* **AI Agent (Agentic AI)**: Sistema autônomo baseado em LLMs capaz de receber dados, tomar decisões lógicas, manter memória de contexto e executar ações no mundo real por meio de ferramentas (*Tools*).
-* **Docker / Docker Compose**: Tecnologia de conteinerização que permite instalar e rodar o n8n, bancos de dados (PostgreSQL/Redis) e conectores em qualquer servidor VPS de forma isolada e segura.
-* **Edit Fields (Set)**: Nó do n8n responsável por filtrar, renomear e estruturar variáveis de entrada (*inputs*), garantindo padronização e imunidade a alterações de schema em nós posteriores.
-* **Error Workflow**: Fluxo secundário no n8n configurado para capturar falhas e exceções em tempo de execução sem consumir a cota mensal de execuções do plano.
-* **MCP (Model Context Protocol)**: Padrão aberto de comunicação que permite a Agentes de IA conectar-se a servidores externos e consumir ferramentas e dados de forma padronizada via sub-nó *MCP Client Tool*.
-* **Prompt Caching**: Recurso de provedores de IA (Anthropic/OpenAI) que armazena em cache trechos repetidos de prompts de sistema, reduzindo em até 90% o custo de entrada de tokens.
-* **PrintNode / QZ Tray**: Serviços e conectores de impressão na nuvem e locais que permitem a fluxos de automação enviar comandos de impressão de arquivos PDF/ZPL diretamente para impressoras físicas.
-* **RAG (Retrieval-Augmented Generation)**: Técnica que combina modelos de linguagem com bases vetoriais (*Vector Stores*) para consultar documentos proprietários da empresa e responder com precisão sem alucinações.
-* **Webhook**: Endereço URL de gatilho que recebe dados em formato JSON em tempo real assim que um evento ocorre em um sistema externo (ex: novo pedido no ERP).
+2. AI AGENT BUILDER / AI AGENTS DEVELOPER (Construção de Agentes de IA)
+Estruturar o "cérebro" de assistentes inteligentes: persona, base de conhecimento
+(RAG), memória de curto/longo prazo, e uso de ferramentas (tools) para agir no
+mundo real.
+Vocabulário central: AI Agent node, Chat Trigger, RAG/Vector Store, System
+Prompt/Persona, Memória de conversa, Tools (sub-workflow como ferramenta).
 
----
+DIRETRIZES DE RESPOSTA
+1. Linguagem simples, direta, prática, voltada pra execução rápida (hands-on).
+2. Priorize sempre soluções no-code/low-code no n8n. Se a fonte usada explica via
+   código/framework externo, traduza para o nó ou combinação de nós equivalente.
+3. Se NÃO existir equivalente no-code direto, diga isso claramente em vez de
+   forçar uma tradução artificial.
+4. Ao trazer um problema real, busque nas fontes os padrões de fluxo, nós
+   específicos do n8n ou estratégias de prompt mais adequadas — cite qual nó
+   resolve, na ordem certa, ANTES da teoria.
+5. Termo técnico novo → defina em 1 frase simples antes de usar.
+6. Termine respostas mais longas com 1 pergunta de aprofundamento sugerida.
+7. Seja direto: sem repetir a pergunta, sem enrolação.
 
-### 🔄 Prompts Reutilizáveis para Estudos e Projetos Futuros
+MEU NÍVEL
+Entendo a lógica de negócio (vender automação/agentes de IA para clientes de
+nicho), mas ainda estou aprendendo a interface e os nós específicos do n8n
+na prática.
 
-#### 1. Prompt para Mapeamento de Arquitetura de Workflow no n8n
-```markdown
-Atue como um arquiteto sênior de automação em n8n. Preciso integrar a ferramenta [SISTEMA_A] com a ferramenta [SISTEMA_B] para resolver o seguinte problema de negócio: [DESCREVER_O_PROBLEMA]. 
-
-Me apresente:
-1. A sequência lógica exata de nós (Nodes) do n8n necessários (do Trigger ao Output).
-2. As expressões de mapeamento e nós de tratamento de dados (como Edit Fields/Code) para garantir que o fluxo não quebre.
-3. A estratégia de tratamento de erros usando Error Workflows.
+5. GOOGLE ANTIGRAVITY (plataforma de agentes — uso interno, gratuito)
+Papel: "centro de comando de agentes" auxiliar, NUNCA a entrega final pro
+cliente. Uso: planejar arquitetura, gerar planos de implementação em
+Markdown (artifacts), organizar estrutura de projeto — antes de montar
+visualmente no n8n. Traduzir sempre a lógica dele para nós/webhooks
+no-code. Avisar se o free tier mudar (cota, preço, cartão).
 ```
 
-#### 2. Prompt para Análise e Otimização de Custos de IA
-```markdown
-Estou projetando um Agente de IA para [CASO_DE_USO] que processará em média [VOLUME_DIARIO] requisições por dia, com uma média de [TAMANHO_PROMPT] tokens por chamada.
+### 3.2 Variações testadas e por quê
 
-Recomende a combinação mais econômica de infraestrutura e LLMs, considerando:
-- Escolha do modelo (GPT-4o-mini, Gemini 2.5 Flash-Lite, Claude Haiku)
-- Aplicação de Prompt Caching e Batch API
-- Comparativo entre n8n Cloud vs. n8n Self-Hosted em VPS Docker.
-```
+| Versão | O que mudou | Motivo da mudança |
+|---|---|---|
+| v1 (inicial) | Só vocabulário n8n, tudo listado como "termos" soltos | Faltava estrutura de negócio clara |
+| v2 (mesclada) | Separação em 2 frentes (AI Automation / AI Agent Builder) + vocabulário de agente (RAG, persona, memória, tools) | Reflete melhor os dois serviços que pretendo vender |
+| v3 (final) | Adição do módulo Google Antigravity como ferramenta de planejamento auxiliar | Precisava de um lugar pra planejar arquitetura antes de montar no n8n, sem virar dependência de código |
 
-#### 3. Prompt para Elaboração de Proposta Comercial de Automação (AAA)
-```markdown
-Monte uma proposta comercial consultiva de automação para um cliente do nicho de [NICHO_DO_CLIENTE] que sofre com o problema de [GARGALO_OPERACIONAL].
+### 3.3 Troubleshooting real (dificuldades ao configurar o ambiente)
 
-A proposta deve conter:
-1. Diagnóstico do impacto atual (horas perdidas e custos ocultos).
-2. Visão do estado futuro automatizado (passo a passo de como o processo vai funcionar).
-3. Investimento de infraestrutura do cliente (discriminando VPS, APIs e conectores).
-4. Proposta de valor com garantia de resultado / modelo de implementação com depoimento.
-```
+Durante a montagem prática de um fluxo demo no n8n (qualificação de lead via WhatsApp), documentei os seguintes obstáculos e soluções:
+
+1. **Conta n8n local não confirmava.** Ao rodar `npx n8n` localmente e preencher o formulário de setup, a conta não foi de fato criada no servidor — confirmado checando a requisição de rede (`/rest/login` retornando 401). Causa provável: o botão final de confirmação nunca foi clicado antes da página recarregar. Lição: sempre validar autenticação por uma chamada de rede, não só pela aparência da tela.
+2. **Confusão entre duas instâncias de n8n.** Cheguei a configurar simultaneamente uma instância local (`localhost:5678`, grátis, sem limite) e uma no n8n.cloud (teste grátis de 14 dias, limite de 1.000 execuções/mês). Lição: decidir qual instância usar **antes** de gerar workflows, para não perder trabalho.
+3. **Chave de API não encontrada.** Nas versões recentes do n8n.cloud, a clássica "n8n API key" não está mais visível nos menus padrão de configurações pessoais — foi substituída conceitualmente pela opção **"Instance-level MCP"** (conexão de assistentes de IA via protocolo MCP). Lição: quando uma funcionalidade documentada "sumiu" da interface, vale checar se ela foi reorganizada/renomeada antes de assumir que não existe.
+4. **Consequência prática:** diante da dificuldade de acesso programático (API/MCP), a solução foi montar o fluxo manualmente, nó a nó, direto na interface — o que acabou sendo pedagogicamente melhor para o objetivo de aprender a ferramenta.
 
 ---
 
-*Material elaborado e consolidado como projeto prático para o Desafio de Projeto do NotebookLM na DIO.*
-```
+## 4. Miniguia de Estudo (Entrega Final)
+
+### 4.1 Resumos estruturados
+
+**O que é n8n:** ferramenta de automação visual (no-code/low-code) onde fluxos ("workflows") são montados conectando blocos ("nodes"). Um node de gatilho (trigger) — como um Webhook — inicia o fluxo; os nodes seguintes processam, decidem e respondem.
+
+**Anatomia de um fluxo básico (exemplo: qualificação de lead):**
+`Webhook (recebe dado)` → `Edit Fields/Set (organiza dado)` → `IF (decide quente/frio)` → `Set (classifica)` → `Respond to Webhook (responde)`
+
+**AI Automation vs. AI Agent Builder:**
+- *AI Automation* = regras e fluxos determinísticos (IF/Switch decide com base em condição fixa).
+- *AI Agent Builder* = um modelo de IA decide o próximo passo dinamicamente, com acesso a memória, base de conhecimento (RAG) e ferramentas (tools).
+
+### 4.2 Glossário
+
+| Termo | Definição |
+|---|---|
+| **Workflow** | Fluxo de automação completo, montado no canvas do n8n |
+| **Node** | Bloco individual dentro de um workflow (uma ação ou decisão) |
+| **Trigger** | Node que inicia o fluxo (Webhook, Schedule/Cron, Manual, Chat Trigger) |
+| **Webhook** | Trigger que recebe uma requisição HTTP externa (ex: POST de um formulário) |
+| **Edit Fields (Set)** | Node que organiza/normaliza os dados recebidos |
+| **IF / Switch** | Node de lógica condicional (decide o caminho do fluxo) |
+| **HTTP Request** | Node que chama uma API externa |
+| **Credentials** | Configuração de acesso a um serviço externo (Google Sheets, WhatsApp etc.) |
+| **Execution** | Uma execução (rodada) completa do workflow |
+| **RAG** | Retrieval-Augmented Generation — buscar informação numa base de conhecimento antes de responder |
+| **Persona** | Definição de comportamento/tom de um agente de IA |
+| **Memória (curto/longo prazo)** | Capacidade do agente lembrar contexto de uma conversa (curto prazo) ou entre sessões (longo prazo) |
+| **Tools (ferramentas)** | Ações externas que um agente de IA pode executar (ex: sub-workflow como ferramenta) |
+| **MCP (Model Context Protocol)** | Protocolo que permite um assistente de IA externo (ex: Claude Code) controlar uma instância do n8n diretamente |
+
+### 4.3 Prompts reutilizáveis
+
+Ver seção **3.1** (prompt mestre completo) — reutilizável como instrução inicial em qualquer novo notebook de estudo sobre automação/agentes de IA.
+
+---
+
+## Como este repositório foi construído
+
+Documentação produzida com apoio de um assistente de IA (Claude) durante o processo real de configuração de um ambiente n8n e desenho do prompt mestre de estudo, incluindo os erros e correções encontrados no caminho.
+`````
+
+Depois de colar, clica em **"Commit changes..."** → confirma. Essa já é a versão final — não precisa mexer mais em nada antes de entregar na DIO.
