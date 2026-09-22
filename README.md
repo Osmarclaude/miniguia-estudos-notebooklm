@@ -1,7 +1,3 @@
-Não, vamos simplificar — vou juntar tudo numa única versão final, pra você colar **uma vez só** (substituindo o que está no GitHub agora, que ainda tem o conteúdo errado do Explend). Já incluí as 4 fontes reais no lugar do placeholder.
-
-Repete os mesmos passos de antes: abra o README.md no GitHub → ✏️ Edit → Ctrl+A, Delete → cola isto:
-
 `````markdown
 # Caderno Temático: Automação No-Code com IA (n8n + Agentes)
 
@@ -150,5 +146,3 @@ Ver seção **3.1** (prompt mestre completo) — reutilizável como instrução 
 
 Documentação produzida com apoio de um assistente de IA (Claude) durante o processo real de configuração de um ambiente n8n e desenho do prompt mestre de estudo, incluindo os erros e correções encontrados no caminho.
 `````
-
-Depois de colar, clica em **"Commit changes..."** → confirma. Essa já é a versão final — não precisa mexer mais em nada antes de entregar na DIO.
